@@ -4,7 +4,7 @@
     <title>Simple HTML Page</title>
 </head>
 <body>
-    <div id="debug"></div>
+    <div id="temperatures"></div>
 
     <script>
         fetch("http://localhost:8000/windspeed.json")
@@ -13,7 +13,7 @@
                 fetch("http://localhost:8000/air-temperature.json")
                     .then(response => response.json())
                     .then(temperatureData => {
-                        const debugElement = document.querySelector("#debug");
+                        const temperaturesElement = document.querySelector("#temperatures");
                         
                         for (let i = 0; i < data.items[0].readings.length; i++) {
                             const windSpeedReading = data.items[0].readings[i];
@@ -28,7 +28,7 @@
                             const windSpeedStationName = windSpeedStation ? windSpeedStation.name : "Unknown Station";
                             const temperatureStationName = temperatureStation ? temperatureStation.name : "Unknown Station";
 
-                            debugElement.innerHTML += `<p>${windSpeedStationName}:<br>
+                            temperaturesElement.innerHTML += `<p>${windSpeedStationName}:<br>
                                 &nbsp&nbsp&nbsp&nbsp WindSpeed: ${windSpeedValue} knots<br>
 
                                 &nbsp&nbsp&nbsp&nbsp    Temperature: ${temperatureValue} degrees</p>`;
