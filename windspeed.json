@@ -1,0 +1,136 @@
+{
+    "metadata": {
+      "stations": [
+        {
+          "id": "S109",
+          "device_id": "S109",
+          "name": "Ang Mo Kio Avenue 5",
+          "location": {
+            "latitude": 1.3764,
+            "longitude": 103.8492
+          }
+        },
+        {
+          "id": "S117",
+          "device_id": "S117",
+          "name": "Banyan Road",
+          "location": {
+            "latitude": 1.256,
+            "longitude": 103.679
+          }
+        },
+        {
+          "id": "S50",
+          "device_id": "S50",
+          "name": "Clementi Road",
+          "location": {
+            "latitude": 1.3337,
+            "longitude": 103.7768
+          }
+        },
+        {
+          "id": "S107",
+          "device_id": "S107",
+          "name": "East Coast Parkway",
+          "location": {
+            "latitude": 1.3135,
+            "longitude": 103.9625
+          }
+        },
+        {
+          "id": "S43",
+          "device_id": "S43",
+          "name": "Kim Chuan Road",
+          "location": {
+            "latitude": 1.3399,
+            "longitude": 103.8878
+          }
+        },
+        {
+          "id": "S121",
+          "device_id": "S121",
+          "name": "Old Choa Chu Kang Road",
+          "location": {
+            "latitude": 1.37288,
+            "longitude": 103.72244
+          }
+        },
+        {
+          "id": "S111",
+          "device_id": "S111",
+          "name": "Scotts Road",
+          "location": {
+            "latitude": 1.31055,
+            "longitude": 103.8365
+          }
+        },
+        {
+          "id": "S60",
+          "device_id": "S60",
+          "name": "Sentosa",
+          "location": {
+            "latitude": 1.25,
+            "longitude": 103.8279
+          }
+        },
+        {
+          "id": "S115",
+          "device_id": "S115",
+          "name": "Tuas South Avenue 3",
+          "location": {
+            "latitude": 1.29377,
+            "longitude": 103.61843
+          }
+        }
+      ],
+      "reading_type": "Wind Speed AVG(S)10M M1M",
+      "reading_unit": "knots"
+    },
+    "items": [
+      {
+        "timestamp": "2023-08-05T18:35:00+08:00",
+        "readings": [
+          {
+            "station_id": "S109",
+            "value": 5.9
+          },
+          {
+            "station_id": "S117",
+            "value": 5.1
+          },
+          {
+            "station_id": "S50",
+            "value": 3.5
+          },
+          {
+            "station_id": "S107",
+            "value": 11.1
+          },
+          {
+            "station_id": "S43",
+            "value": 2.6
+          },
+          {
+            "station_id": "S121",
+            "value": 6.9
+          },
+          {
+            "station_id": "S111",
+            "value": 4.7
+          },
+          {
+            "station_id": "S60",
+            "value": 5.5
+          },
+          {
+            "station_id": "S115",
+            "value": 3.2
+          }
+        ]
+      }
+    ],
+    "api_info": {
+      "status": "healthy"
+    }
+  }
+  
