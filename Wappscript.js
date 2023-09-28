@@ -68,4 +68,9 @@ fetch("http://localhost:8000/windspeed.json")
                     &nbsp&nbsp&nbsp&nbsp Temperature: ${value} degrees<br></p>`;
             }
         }
+            
+  
+        
+     
+
        
