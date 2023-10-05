@@ -36,9 +36,6 @@ fetch("http://localhost:8000/windspeed.json")
                         
                             Sortbytemperature(temperatureMap);
                             SortbywindSpeed(windSpeedMap);
-                       
-                        
-                        
                     })
                     .catch(error => {
                         console.error("Temperature Fetch error:", error);
