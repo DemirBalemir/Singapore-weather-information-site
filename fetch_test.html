@@ -2,44 +2,30 @@
 <html>
 <head>
     <title>Simple HTML Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="Wappscript.js"></script>
 </head>
 <body>
-    <div id="temperatures"></div>
+    <div class="hero">
+        <div class="button">
+            <div class="wind-speed-control">
+                <button onclick="sortByWindSpeed()">Sort by Wind Speed</button>
+            </div>
+            <div class="1">
+                <button onclick="sortByTemperature()">Sort by Temperature</button>
+            </div>
+        </div>
+      
 
-    <script>
-        fetch("http://localhost:8000/windspeed.json")
-            .then(response => response.json())
-            .then(data => {
-                fetch("http://localhost:8000/air-temperature.json")
-                    .then(response => response.json())
-                    .then(temperatureData => {
-                        const temperaturesElement = document.querySelector("#temperatures");
-                        
-                        for (let i = 0; i < data.items[0].readings.length; i++) {
-                            const windSpeedReading = data.items[0].readings[i];
-                            const temperatureReading = temperatureData.items[0].readings[i];
 
-                            const windSpeedStation = data.metadata.stations.find(station => station.id === windSpeedReading.station_id);
-                            const temperatureStation = temperatureData.metadata.stations.find(station => station.id === temperatureReading.station_id);
-
-                            const windSpeedValue = windSpeedReading.value;
-                            const temperatureValue = temperatureReading.value;
-
-                            const windSpeedStationName = windSpeedStation ? windSpeedStation.name : "Unknown Station";
-                            const temperatureStationName = temperatureStation ? temperatureStation.name : "Unknown Station";
-
-                            temperaturesElement.innerHTML += `<p>${windSpeedStationName}:<br>
-                                &nbsp&nbsp&nbsp&nbsp WindSpeed: ${windSpeedValue} knots<br>
-
-                                &nbsp&nbsp&nbsp&nbsp    Temperature: ${temperatureValue} degrees</p>`;
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Temperature Fetch error:", error);
-                    });
-            })
-            .catch(error => {
-                console.error("WindSpeed Fetch error:", error);
-            });
-    </script>
+    </div>
+        
+    <div class="text-control">
+        <div id="debug"></div>
+    </div>
+    
+    <div class="header">
+        <h1>Weather App</h1>
+    </div>
 </body>
+</html>
