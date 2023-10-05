@@ -28,10 +28,6 @@ fetch("http://localhost:8000/windspeed.json")
 
                             windSpeedMap.set(windSpeedStationName, windSpeedValue);
                             temperatureMap.set(temperatureStationName, temperatureValue);
-
-
-                                
-                        
                         }
                         
                             Sortbytemperature(temperatureMap);
