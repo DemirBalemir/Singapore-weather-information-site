@@ -7,12 +7,8 @@ fetch("http://localhost:8000/windspeed.json")
             .then(data => {
                 fetch("http://localhost:8000/air-temperature.json")
                     .then(response => response.json())
-                    .then(temperatureData => {
-                        
+                    .then(temperatureData => { 
                         const debugElement = document.querySelector("#debug");
-
-            
-
                         for (let i = 0; i < data.items[0].readings.length; i++) {
                             const windSpeedReading = data.items[0].readings[i];
                             const temperatureReading = temperatureData.items[0].readings[i];
@@ -29,9 +25,8 @@ fetch("http://localhost:8000/windspeed.json")
                             windSpeedMap.set(windSpeedStationName, windSpeedValue);
                             temperatureMap.set(temperatureStationName, temperatureValue);
                         }
-                        
-                            Sortbytemperature(temperatureMap);
-                            SortbywindSpeed(windSpeedMap);
+                        sortByTemperature(temperatureMap);
+                        sortByWindSpeed(windSpeedMap);
                     })
                     .catch(error => {
                         console.error("Temperature Fetch error:", error);
@@ -40,8 +35,7 @@ fetch("http://localhost:8000/windspeed.json")
             .catch(error => {
                 console.error("WindSpeed Fetch error:", error);
             });
-
-        function SortbywindSpeed() {
+        function sortByWindSpeed() {
             const sortedWindSpeedMap = new Map([...windSpeedMap.entries()].sort((a, b) => b[1] - a[1]));
             const debugElement = document.querySelector("#debug");
             debugElement.innerHTML = ""; 
@@ -51,8 +45,7 @@ fetch("http://localhost:8000/windspeed.json")
                     &nbsp&nbsp&nbsp&nbsp WindSpeed: ${value} knots<br></p>`;
             }
         }
-
-        function Sortbytemperature() {
+        function sortByTemperature() {
             const sortedTemperatureMap = new Map([...temperatureMap.entries()].sort((a, b) => b[1] - a[1]));
             const debugElement = document.querySelector("#debug");
             debugElement.innerHTML = ""; 
@@ -61,4 +54,3 @@ fetch("http://localhost:8000/windspeed.json")
                     &nbsp&nbsp&nbsp&nbsp Temperature: ${value} degrees<br></p>`;
             }
         }
-       
